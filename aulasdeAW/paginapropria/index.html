@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Monteiro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1> F E S T I N H A </h1>
+        <p>Música faz bem</p>
+    </header>
+    <footer>
+        <p>&copy; 2025 Guilherme Henrique Monteiro</p>
+    </footer>
+
+    
+    <div class="music-player">
+        <button id="playPauseBtn">▶️</button>
+        <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+    </div>
+
+    <script>
+       
+        const audio = new Audio('src/BLABLABLA.mp3');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const volumeControl = document.getElementById('volumeControl');
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = '⏸️';
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = '▶️';
+            }
+        });
+
+        volumeControl.addEventListener('input', () => {
+            audio.volume = volumeControl.value;
+        });
+    </script>
+</body>
+</html>

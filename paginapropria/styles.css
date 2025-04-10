@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    cursor: none; /* Remove o cursor padrão */
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    font-size: 3em;
+    margin: 20px 0;
+    animation: colorChange 5s infinite;
+}
+
+@keyframes colorChange {
+    0% { color: #ff00cc; }
+    25% { color: #3333ff; }
+    50% { color: #00ffcc; }
+    75% { color: #ffcc00; }
+    100% { color: #ff00cc; }
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Cursor personalizado que pisca em RGB */
+.cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff0000; /* Começa com vermelho */
+    animation: cursorBlink 1.5s infinite;
+    pointer-events: none; /* Garante que o cursor não interfira com cliques */
+    transform: translate(-50%, -50%); /* Centraliza o cursor no ponteiro */
+    z-index: 9999; /* Garante que o cursor fique acima de tudo */
+}
+
+@keyframes cursorBlink {
+    0% { background-color: #ff0000; } /* Vermelho */
+    33% { background-color: #00ff00; } /* Verde */
+    66% { background-color: #0000ff; } /* Azul */
+    100% { background-color: #ff0000; } /* Volta ao vermelho */
+}
+
+/* Estilo do player de música */
+.music-player {
+    position: fixed;
+    bottom: 60px; /* Posiciona acima do footer */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.music-player button {
+    background: #ff00cc;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.music-player button:hover {
+    background: #ff6699;
+}
+
+.music-player input[type="range"] {
+    width: 100px;
+    cursor: pointer;
+}
